@@ -1,8 +1,10 @@
 
 import { useEffect, useState } from 'react';
+import { Menu, X } from 'lucide-react';
 
 const Index = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,6 +15,10 @@ const Index = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
   return (
     <div className="min-h-screen">
       {/* Navigation */}
@@ -20,11 +26,32 @@ const Index = () => {
         scrolled ? 'bg-cyber-black/80 backdrop-blur-md py-4' : 'py-6'
       }`}>
         <div className="container mx-auto px-4">
-          <div className="flex justify-center items-center space-x-6 md:space-x-12">
+          {/* Mobile Menu Button */}
+          <div className="md:hidden absolute right-4 top-4">
+            <button 
+              onClick={toggleMobileMenu}
+              className="text-neon-cyan hover:text-white p-2"
+            >
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+
+          {/* Desktop Menu */}
+          <div className="hidden md:flex justify-center items-center space-x-12">
             <a href="#" className="nav-link">Home</a>
             <a href="#music" className="nav-link">Music</a>
             <a href="#lore" className="nav-link">Lore</a>
             <a href="#join" className="nav-link">Join Us</a>
+          </div>
+
+          {/* Mobile Menu */}
+          <div className={`md:hidden ${mobileMenuOpen ? 'block' : 'hidden'}`}>
+            <div className="flex flex-col items-center space-y-4 pt-16 pb-4 bg-cyber-black/95 backdrop-blur-md">
+              <a href="#" className="nav-link">Home</a>
+              <a href="#music" className="nav-link">Music</a>
+              <a href="#lore" className="nav-link">Lore</a>
+              <a href="#join" className="nav-link">Join Us</a>
+            </div>
           </div>
         </div>
       </nav>
@@ -41,8 +68,8 @@ const Index = () => {
 
         <div className="relative w-full max-w-[200px] md:max-w-md aspect-square my-8 md:my-12">
           <img
-            src="/lovable-uploads/4e25bcc6-1bbe-4ad7-8439-1637bd7cb5e2.png"
-            alt="Cyberpunk Circuit"
+            src="/lovable-uploads/924fc868-e603-4778-bd76-a11d6c8efba3.png"
+            alt="Cyberpunk Core"
             className="w-full h-full object-cover rounded-lg border-2 border-neon-cyan/50 animate-breathe"
           />
           <div className="absolute inset-0 rounded-lg animate-breathe"></div>
