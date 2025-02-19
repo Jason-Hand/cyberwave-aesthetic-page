@@ -43,11 +43,22 @@ export default {
         "float": {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-10px)" }
+        },
+        "breathe": {
+          "0%, 100%": { 
+            boxShadow: "0 0 30px rgba(0,255,245,0.3)",
+            borderColor: "rgba(0,255,245,0.5)"
+          },
+          "50%": { 
+            boxShadow: "0 0 50px rgba(0,255,245,0.6)",
+            borderColor: "rgba(0,255,245,1)"
+          }
         }
       },
       animation: {
         "glitch": "glitch 1s infinite",
-        "float": "float 3s ease-in-out infinite"
+        "float": "float 3s ease-in-out infinite",
+        "breathe": "breathe 4s ease-in-out infinite"
       }
     },
   },

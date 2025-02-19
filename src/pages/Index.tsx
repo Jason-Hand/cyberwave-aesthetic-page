@@ -30,20 +30,20 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="min-h-screen flex flex-col items-center justify-center px-4 relative">
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-center mb-8">
-          <span className="glitch-text" data-text="THE TRANSMISSION BEGINS">
-            THE TRANSMISSION BEGINS
-          </span>
+      <section className="min-h-screen flex flex-col items-center justify-center px-4 relative pt-32">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-center mb-8 relative">
+          <span className="glitch-text tracking-wider" data-text="THE TRANSMISSION">THE TRANSMISSION</span>
+          <br />
+          <span className="glitch-text tracking-wider mt-4 inline-block" data-text="BEGINS">BEGINS</span>
         </h1>
 
-        <div className="relative w-full max-w-md aspect-square mb-12 animate-float">
+        <div className="relative w-full max-w-md aspect-square mb-12">
           <img
             src="/lovable-uploads/4e25bcc6-1bbe-4ad7-8439-1637bd7cb5e2.png"
             alt="Cyberpunk Circuit"
-            className="w-full h-full object-cover rounded-lg border-2 border-neon-cyan"
+            className="w-full h-full object-cover rounded-lg border-2 border-neon-cyan/50 animate-breathe"
           />
-          <div className="absolute inset-0 rounded-lg shadow-[0_0_30px_rgba(0,255,245,0.3)]"></div>
+          <div className="absolute inset-0 rounded-lg animate-breathe"></div>
         </div>
 
         <p className="text-neon-cyan text-xl md:text-2xl mb-12 text-center">

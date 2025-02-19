@@ -35,22 +35,28 @@
   }
 
   .glitch-text {
-    @apply text-white relative;
+    @apply text-white relative inline-block;
+    text-shadow: 0.05em 0 0 rgba(255, 0, 255, 0.4),
+                -0.05em -0.025em 0 rgba(0, 255, 245, 0.4),
+                -0.025em 0.05em 0 rgba(0, 255, 245, 0.1);
   }
 
   .glitch-text::before,
   .glitch-text::after {
     @apply content-[attr(data-text)] absolute left-0 w-full h-full;
     clip: rect(44px, 450px, 56px, 0);
+    animation: glitch 3s infinite linear alternate-reverse;
   }
 
   .glitch-text::before {
-    @apply text-neon-pink left-[2px] animate-glitch;
-    animation-delay: -0.2s;
+    @apply text-neon-pink left-[2px];
+    clip: rect(0, 900px, 0, 0);
+    animation: glitch 5s infinite linear alternate-reverse;
   }
 
   .glitch-text::after {
-    @apply text-neon-cyan left-[-2px] animate-glitch;
-    animation-delay: -0.3s;
+    @apply text-neon-cyan left-[-2px];
+    clip: rect(0, 900px, 0, 0);
+    animation: glitch 2s infinite linear alternate-reverse;
   }
 }
