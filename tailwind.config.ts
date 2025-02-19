@@ -20,6 +20,7 @@ export default {
     },
     extend: {
       colors: {
+        border: "hsl(var(--border, 240 3.7% 15.9%))",
         neon: {
           cyan: "#00fff5",
           pink: "#ff00ff",

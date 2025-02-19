@@ -11,10 +11,6 @@
     --foreground: 222.2 84% 4.9%;
   }
 
-  * {
-    @apply border-border;
-  }
-
   body {
     @apply bg-cyber-black text-white font-['Orbitron'] overflow-x-hidden;
   }
