@@ -34,11 +34,26 @@ export default {
       },
       keyframes: {
         "glitch": {
-          "0%, 100%": { transform: "translate(0)" },
-          "20%": { transform: "translate(-2px, 2px)" },
-          "40%": { transform: "translate(-2px, -2px)" },
-          "60%": { transform: "translate(2px, 2px)" },
-          "80%": { transform: "translate(2px, -2px)" }
+          "0%": { 
+            transform: "translate(0)",
+            textShadow: "-2px -2px 0 #ff00ff, 2px 2px 0 #00fff5"
+          },
+          "25%": { 
+            transform: "translate(-2px, 2px)",
+            textShadow: "2px -2px 0 #ff00ff, -2px 2px 0 #00fff5"
+          },
+          "50%": { 
+            transform: "translate(2px, -2px)",
+            textShadow: "2px 2px 0 #ff00ff, -2px -2px 0 #00fff5"
+          },
+          "75%": { 
+            transform: "translate(-2px, -2px)",
+            textShadow: "-2px 2px 0 #ff00ff, 2px -2px 0 #00fff5"
+          },
+          "100%": { 
+            transform: "translate(0)",
+            textShadow: "2px 2px 0 #ff00ff, -2px -2px 0 #00fff5"
+          }
         },
         "float": {
           "0%, 100%": { transform: "translateY(0)" },
@@ -56,7 +71,7 @@ export default {
         }
       },
       animation: {
-        "glitch": "glitch 1s infinite",
+        "glitch": "glitch 2s infinite",
         "float": "float 3s ease-in-out infinite",
         "breathe": "breathe 4s ease-in-out infinite"
       }
