@@ -30,7 +30,7 @@ const Index = () => {
           <div className="md:hidden absolute right-4 top-4">
             <button 
               onClick={toggleMobileMenu}
-              className="text-neon-cyan hover:text-white p-2"
+              className="text-neon-cyan hover:text-white p-2 z-50 relative"
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -45,8 +45,8 @@ const Index = () => {
           </div>
 
           {/* Mobile Menu */}
-          <div className={`md:hidden ${mobileMenuOpen ? 'block' : 'hidden'}`}>
-            <div className="flex flex-col items-center space-y-4 pt-16 pb-4 bg-cyber-black/95 backdrop-blur-md">
+          <div className={`md:hidden fixed inset-0 ${mobileMenuOpen ? 'block' : 'hidden'}`}>
+            <div className="flex flex-col items-center space-y-4 pt-16 pb-4 bg-cyber-black/95 backdrop-blur-md h-screen">
               <a href="#" className="nav-link">Home</a>
               <a href="#music" className="nav-link">Music</a>
               <a href="#lore" className="nav-link">Lore</a>
